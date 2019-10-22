@@ -1,20 +1,27 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content style="height: 100vh;">
-  <ion-item>
-    <ion-label floating>Email Address</ion-label>
-    <ion-input type="text" [(ngModel)]="user.email"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label floating>Password</ion-label>
-    <ion-input type="password" [(ngModel)]="user.password"></ion-input>
-  </ion-item>
-
-  <button ion-button (click)="register()">Register</button>
-  <button ion-button (click)="login(user)">Login</button>
-
+<ion-content color="primary" padding>
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>Login</h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-input name="email" type="email" placeholder="your@email.com" [(ngModel)]="user.email" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="password" type="password" placeholder="Password" [(ngModel)]="user.password" required></ion-input>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button size="large" (click)="login(user)" expand="block">Login</ion-button>
+          </div>
+          
+          <div padding>
+              <p style="text-align: center;">Do you have a registered account?</p>
+            <ion-button size="large" (click)="register()" expand="block">Register</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 </ion-content>
